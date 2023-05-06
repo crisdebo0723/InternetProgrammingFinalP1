@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Internet Programming Final Cristian DiBattista</title>
+
+<!-- This is a comment line which won't be rendered by any HTML browser -->
+
+
+<style>
+
+.title {
+  background-color: #3aa;
+  color: yellow;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 32px;
+}
+
+.codeblock {
+background-color: black;
+color: white;
+text-allign: left;
+font: Monaco;
+padding: 18px;
+width: 100%;
+border: none;
+}
+
+.sectionheading {
+  background-color: #a77;
+  color: black;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="title"> Internet Programming Final Part 1</div>
+<div class="sectionheading">
+Cristian DiBattista 5/11/2023
+</div>
+
+<button class="collapsible">2. Explain javascript array methods: push, pop, shift and unshift. Show how to use javascript array as queue and stack respectively.</button>
+<div class="content">
+<p>The push method adds one or more elements to the end of an array and returns the length of the array.</p>
+<br>
+<div class = "codeblock">
+let arr = [1, 2, 3];
+<br>
+arr.push(4);
+<br>
+console.log(arr); // [1, 2, 3, 4]
+<br>
+</div>
+<br>
+<p> The pop method removes the last element from an array and returns it </p>
+<br>
+<div class = "codeblock">
+let arr = [1, 2, 3];
+<br>
+let last = arr.pop();
+<br>
+console.log(last); // 3
+<br>
+console.log(arr); // [1, 2]
+<br>
+</div>
+<br>
+<p> The shift method removes the first element from an array and returns that element. It also shifts everything else to al ower index </p>
+<br>
+<div class = "codeblock">
+let arr = [1, 2, 3];
+<br>
+let first = arr.shift();
+<br>
+console.log(first); // 1
+<br>
+console.log(arr); // [2, 3]
+<br>
+</div>
+<p>Unshift adds one or more elements to the beginning of an array and returns the new length of the array. This also shifts all existing elements to a higher index.</p>
+<br>
+<div class = "codeblock">
+let arr = [1, 2, 3];
+<br>
+arr.unshift(0);
+<br>
+console.log(arr); // [0, 1, 2, 3]
+</div>
+<p>When using an array as a queue. One example could involve pushing an element to the back of an array and using shift to remove elements from the front. </p>
+<div class = "codeblock">
+let queue = [];
+<br>
+queue.push(1);
+<br>
+queue.push(2);
+<br>
+queue.push(3);
+<br>
+console.log(queue); // [1, 2, 3]
+<br>
+let first = queue.shift();
+<br>
+console.log(first); // 1
+<br>
+console.log(queue); // [2, 3]
+</div>
+<p> When using an array as a stack, you can do the same but using push and pop.
+<div class = "codeblock">
+let stack = [];
+<br>
+stack.push(1);
+<br>
+stack.push(2);
+<br>
+stack.push(3);
+<br>
+console.log(stack); // [1, 2, 3]
+<br>
+let last = stack.pop();
+<br>
+console.log(last); // 3
+<br>
+console.log(stack); // [1, 2]
+</div>
+</div>
+</div>
+
+
+<button class="collapsible">3. show how a js object to describe a student (using three property fname, lname and age), and show an array of 3 student objects.</button>
+<div class="content">
+ <div class = "codeblock"> 
+<br>
+ const student = {
+ <br>
+  fname: "John",
+  <br>
+  lname: "Doe",
+  <br>
+  age: 21
+  <br>
+};
+<br>
+<br>
+const students = [
+<br>
+  {
+  <br>
+    fname: "John",
+	<br>
+    lname: "Doe",
+	<br>
+    age: 21
+	<br>
+  },
+  <br>
+  {
+  <br>
+    fname: "Jane",
+	<br>
+    lname: "Smith",
+	<br>
+    age: 19
+	<br>
+  },
+  <br>
+  {
+  <br>
+    fname: "Bob",
+	<br>
+    lname: "Johnson",
+	<br>
+    age: 20
+	<br>
+  }
+  <br>
+];
+<br>
+
+
+</p> </div>
+</div>
+
+<button class="collapsible">6. Briefly compare json, xml, yaml (“ YAML   Ain’t   Markup   Language”), and markdown. </button>
+<div class="content">
+  <p>
+  JSON: JSON is lightweight and easy to parse. It is based on the JavaScript object syntax and it used on a lot of modern web applications for data exchange between client and server. JSON supports numerous data types (Strings, numbers, booleans, arrays, etc).
+  <br>
+  <br>
+  XML: XML is a markup language similar to HTML. It is flexible and extensible. Like JSOn it is also used in a lot of applications and industries like webdevelopment and document management. It supports different data types much like JSON.
+  <br>
+  <br>
+  YAML: YAML is human-readable. It is designed to be easier to read. Easier than XML or JSON. It is often used for configuration files and data exchange between different programming languages. It also supports numerous data types. But allows for nested objects and arrays.
+  <br>
+  <br>
+  Markdown: Markdown is lightweight and designed to be easy to read and write. It is often used to create formatted text for things like websites or blogs. It supports basic formatting, and advanced code blocks.
+  </p>
+</div>
+
+
+<button class="collapsible">8. Differentiate javascript, typescript, transpile , ES6/7,  node. Is Node a framework? Justify your answer.</button>
+<div class="content">
+  <p>JavaScript is a scripting language that is commonly used to add interactivity to web pages. It is a high-level, dynamic, and interpreted language that runs in web browsers. TypeScript is a superset of JavaScript that adds static typing and other features to improve developer productivity and code maintainability. TypeScript code is transpiled into JavaScript code before execution.
+<br>
+Transpiling is the process of converting code from one language to another while preserving the functionality of the code. Useful for converting to a language that may add more functionality to a program.
+<br>
+ES6/7 refers to the sixth and seventh versions of the ECMAScript specification, which is the standard that JavaScript and TypeScript follow. ES6/7 introduced several new features to the language, including classes, arrow functions, and destructuring.
+<br>
+Node is a JavaScript runtime that allows developers to run JavaScript code outside of web browsers. It is built on the V8 JavaScript engine and provides APIs for working with files, network requests, and other common tasks. Node is not technically a framework, but it can be used with many different frameworks to build web applications. But it only stays within JavaScript's runtime environment. Think of it as a place to run JS code without putting it in HTML.
+
+</div>
+
+<button class="collapsible">9. Differentiate nextjs vs. meteorjs vs. expressjs  </button>
+<div class="content">
+  <p>
+	The 3 are all famous web development frameworks that let developers build web applications. But they contain a few differences.
+	<br>
+	<br>
+	Nextjs: It is a React-based framework. It profides features like code splitting, server-side rendering, static site generation, and automated optimized performence. It is best used for building data-driven web software that require a server-side for realtime updates.
+	<br>
+	<br>
+	Meteorjs: This framework provides most needed for building web software. Such as front-end framework, a back-end server, and a database. It lets developers write code in JavaScript for both client and server and makes it easier.
+	<br>
+	<br>
+	Expressjs: A minimalist framework for Nodejs. It provides simple and flexible tools for building web applications. The main focus is on provided basic web software infrastructure. It is suited best for single-page applications.
+  </p>
+</div>
+
+<button class="collapsible">10. Name 4 major differences between angular  vs. react  </button>
+<div class="content">
+	<p>
+	While they are the two most popular front-end JavaScript frameworks used for building websites, they share some differences.
+	<br>
+	<br>
+	For one, Angular is considered to be more difficult to learn than React due to syntax and architecture. React is lightweight and easier to learn with a simpler syntax.
+	<br>
+	<br>
+	When it comes to architecture, Angular is based on three layers. Model, controller, and view. All of these are included, while React only allows for the view layer. The rest must be added with other libraries. React's architecture is component-based. These components are rendered with React's DOM library.
+	<br>
+	<br>
+	Since react uses a virtual DOM. The performance is greatly improved. All DOM trees are lightweight and build on the server. Therefore, the load times are reduced. Angular performs a lot worse in comparison due to the complex and dynamic nature of Angular. Bindings in Angular are assigned watchers which check and track values. The more bindings you have, the more watchers, and with that comes a bigger beating on performance.
+	<br>
+	<br>
+	React requires numerous tools to test applications with it which makes testing each different component and JavaScript code a chore. Angular allows the use of only one tool which makes it sightly less straining to test.
+		</p>
+
+</div>
+
+<button class="collapsible">13. What are AJAX and XMLHttpRequest (XHR) objects respectively? Identify 3 properties and 3 methods</button>
+<div class="content">
+<p>AJAX allows creating dynamic web applications by sending and recieving data ansychronously. XHR is a javascript object that provides ways to make HTTP requests and is the core tech behind AJAX.
+<br>
+Some methods and properties include:
+<br>
+<ul>
+<li>new XMLHttpRequest() creates an XMLHttpRequest object. </li>
+<li>getResponseHeader() returns header information</li>
+<li>send() sends the request to the server. Used for GET requests</li>
+<li>onload property defines a function to be called when the request is recieved</li>
+<li>responseText property returns the response data as a string</li>
+<li>status property returns the status-number of a request</li>
+</ul></p>
+</div>
+
+
+
+<button class="collapsible">14. Explain npm, npx, nvm,  package.json and package-lock.json files</button>
+<div class="content">
+  <p>
+  <ul>
+  <li> NPM is a package manager for Nodejs. It allows you to easily install and manage code modules or packages. A linux user's best friend if you will.</li>
+  <li> NPX is a command-line tool bundled with NPM and allows developers to run Nodejs packages without having to install them. Usefull for testing new packages without taking up space.</li>
+  <li> NVM is a tool that allows developers to switch between different versions of Nodejs. Useful for projects that require specific versions of node (Much like the Meteor assignment). </li>
+  <li> Package.json is a configuration file used by NPM. It can store metadata about projects and dependencies. Such as developer dependencies, authors, licenses, etc. </li>
+  <li> Package-lock.json is a file automatically generated by NPM. It stores a complete list of dependencies and their versions and information about the specific versions of said dependencies. </li>
+  </ul>
+  </p>
+</div>
+
+<button class="collapsible">15. Differences among CSS, LESS, SASS (Syntactically Awesome Stylesheet)</button>
+<div class="content">
+  <p>CSS has a relatively simple syntax, but it can get very repetitive when writing more complex CSS code. LESS and SASS use concise syntax and features like variables, functions, and mixins making it a more traditional programmming language.
+  <br>
+  LESS and SASS offer more features, as mentioned before variables, nesting, inheritance and operators. CSS doesn't offer these.
+  <br>
+  One advantage CSS has is that it is standard and supported by all modern browsers. LESS and SASS require a preprocessor to complile the code into CSS. Meaning, the browser must have JavaScript support. It may also come with some complexity.
+  <br>
+  CSS is more standard to learn and often used more than LESS and SASS. Although, they can be used to for more complex and can be really usefull if the programmer knows how to take advantage of their features.</p>
+</div>
+
+<button class="collapsible">16. backbone, ember, underscore, bootstrap </button>
+<div class="content">
+  <p><ul>
+  <li>Backbone is a Javascript library that provides a "backbone" or structure for developing web applications. Based on the Model-View-Controller patter, it provides code organization by giving models for data, views for user interface, and controllers for managing the interactions between the two.</li>
+  <li>Like backbone, Ember is also a javascript framework. It is more opionionated and provides functionality out of the box. Based on the Model-View-ViewModel pattern, it emphasizes convention over configuration. The goal is to make it easier to build complex web applications</li>
+  <li>Underscore is a library that provides utility functions for working with data. Often used alongside backbone, the goal is to simplify common tasks. </li>
+  <li>Bootstrap is one of the more popular frameworks. It provides pre-designed UI components that can be modified to the developer's heart's content. Boostrap utalizes a grid system for creating layouts to adapt to different screen sizes. (The CPU website assignment used this, which made a mobile view for the website easier) </li></p>
+</div>
+
+<button class="collapsible">17. 3 Differences between Compute Engine and App Engine</button>
+<div class="content">
+<p><ol>
+<li>Compute Engine offers IaaS while App Engine offers PaaS. This means that Compute engine provides users with virtual machines that can be customized to run different applications. App engine allows users to focus on writing code without managing infrastructure.</li>
+<li>Compute Engine provides more flexibility since it lets you have control over infastracture. App engine is more streamlined and simplified.</li>
+<li>Compute engine offers advanced networking features. Like setting up virtual private clouds and configuring firewalls. App engine has minimal control over networking.</li>
+</ol></p>
+</div>
+<!-- start from here, Copy the following lines and paste for Excel, Access and PPT under the end --> 
+
+
+<button class="collapsible">19. Define the following concepts: nosql, Mongodb,  collection, document, rdbms, mysql, sql, MongoDB Query Language (MQL)</button>
+<div class="content">
+<p><ul>
+<li>NoSQL is a DMBS that doesn't use SQL. It is an approach to database design that enables storing and querying data outside tradition relational database structures.</li>
+<li>MongoDB is an example of a NoSQL oriented DBMS. It is designed to handle large volumes of data and has a flexible document based that allows for easy scalabiity. It stores data in a JSON-like format so that it is faster for querying.</li>
+<li>Collections are used to group documents stored in a database. It is like a table in a relationable database, and can hold one or more documents.</li>
+<li>Documents are units of data stored as an object. It is the equivilant to a row in a relational database and represents a single entity instance.</li>
+<li>MySQL is a popular open-source relational database management system. More commonly used for web applications, it supports a wide range of platforms.</li>
+<li>SQL is a language used for managing relational databases. Allows for querying, updating, and managing data.</li></p>
+<li>MongoDB Query Language is used to manipulate data in MongoDB. It is based on a subset of the javascript language and provides as et of functions and operations within MongoDB</li>
+</ul>
+</div>
+
+<button class="collapsible">20. Responsive Web design is the approach that suggests that design and development should respond to the user's behavior and environment based on screen size, platform and orientation. Explain Media Queries and viewport and grid layout.</button>
+<div class="content">
+<p><ul>
+<li> Media Queries is a CSS technique that allows you to apply styles to a webpage based on the size of the device screen or browser window. You can create responsive designs that ajust automatically depending on the screen size or orientation.</li>
+<li> Viewport is an area of the browser window that displays the web page. The size depends on the screen size an orientation. It affects how the webpage is displayed.</li>
+<li> Grid Layout is a CSS layout system that allows you to create complex grid structures for your web page layout. With this, you can divide your webpage into rows and columns and have different content displayed in each.</li></p>
+</div>
+
+<button class="collapsible">21. What are data attributes?</button>
+<div class="content">
+<p>Data attributes allow storing extra information on standard, semantic HTML elements without other practices like non-standard attributes, or extrap roperties on DOM.</p>
+</div>
+
+<button class="collapsible">22. A template engine enables you to use static template files in your application. At runtime, the template engine replaces variables in a template file with actual values, and transforms the template into an HTML file sent to the client. This approach makes it easier to design an HTML page. Briefly describe  4 popular template engines or libraries. https://expressjs.com/en/guide/using-template-engines.html</button>
+<div class="content">
+  <p>4 popular template engines are Pug, Mustache, EJS, and Dust.
+  <ul>
+  <li> Pug: uses indentation and a concise suntax to general HTML markup. Supports dynamic content, includes, mixins, and inheritance.</li>
+  <li> Mustache: compatible with numerous programming languages. uses simple and flexible syntax that can be used for seperation of presentation and logic.</li>
+  <li> EJS: Allows the embedding of JavaScript code (as the name emplies) into HTML markup. Supports loops, conditions, etc. Easy to learn. </li>
+  <li> Dust: Developed by LinkedIn it is designed to be fast. Allows aynchrounous reading, compatibility with other platforms, and lightweight performance. </li>
+  </ul>
+  </p>
+</div>
+
+
+
+
+
+<button class="collapsible">23. Asynchronous, await, vs. synchronous, blocking calls vs. noblocking calls</button>
+<div class="content">
+<p>Asynchronous function is a function that starts an operation and potentially returns before the operation completes. The operation completes in the background, allowing other code to execture in the meantime. Synchronous completes an operation before returning.
+<br>
+Blocking calls cause the program to wait until the requested operation is complete before continuing. Non-blocking calls allow the program to continue running while the requested operation is performed in the background.
+</p>
+</div>
+
+<button class="collapsible">24. arrow functions in 3 difference cases</button>
+<div class="content">
+<p>Arrow functions is an anonymous function that uses an arrow => to create a compact function.
+<br>
+Examples:
+<ul>
+<li>(parameter1, parameter2, ...) => expression</li>
+<li>(parameter1, parameter2, ...) => { statements; }</li>
+<li>let findSum = (a,b) => a + b;</li>
+</ul></p>
+</div>
+
+<button class="collapsible">25. HTTP protocols, methods, request and reponse messages, and message header fields (  https://en.wikipedia.org/wiki/List_of_HTTP_header_fields), response status codes. https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods</button>
+<div class="content">
+<p><ul>
+<li>HTTP if the protocol used for transferring data over the internet. 2 versions exist, HTTP/1.1 and HTTP/2.0 although 1.1 is the most common version</li>
+<li>HTTP contains several methods used for making requests between the client and server.
+<ul>
+<li>GET requests data from a specified resource </li>
+<li>POST submits an entity to be processed by a specified resource</li>
+<li>PUT Uploads a representation of the specific resource</li>
+<li>DELETE deletes a specified resource</li>
+<li>HEAD Retrieves the headers for a specified resource</li>
+<li>OPTIONS describes the communication options for the specified resource</li>
+</ul>
+These are just a few methods, there are many more. </li>
+<li>HTTP request and response messages are the communication messages that are exhanged between client and server. Request is sent from the client to request something from the server. Response is what the server sent back to the client </li>
+<li>HTTP message header fields provide information about the request or response. Such as the length, type, software the requesti is made from, server the request is sent to, and the type of media.</li>
+<li>Response codes are the three digit codes that indicate the status of the response send by the server to the cleint. Some common ones are:
+<ul>
+<li>200: request was succesful</li>
+<li>404: request was not found</li>
+<li>500: error when processing request</li>
+<li>302: request was found but was moved</li>
+</ul>
+</li>
+</ul></p>
+</div>
+
+<button class="collapsible">29. Express, Express routing, and express middleware</button>
+<div class="content">
+<p><ul>
+<li>Express is a popular open-source web framework for Nodejs that simplifies development for web applications.</li>
+<li>Express routing refers to the mechanism for defining routes that your application will respond to. Express provides a routing API that allows you to define routes.</li>
+<li>Express middleware is a set of functions that can be used to modify the behavior of your application's HTTP requests and responses. Middleware functions are executed where each function and modify the request and response objects.</li>
+</ul></p>
+</div>
+
+<button class="collapsible">30. What are the following? Briefly compare them storybook,cypress,. jest, mocha,  jasmine</button>
+<div class="content">
+<p><ul>
+<li>Storybook is a development environment for UI components. It lets developers isolate UI components to develop them separate</li>
+<li>Cypress is a testing framework used for testing web applications. IT allows the user to simulate interactions and verify behavior.</li>
+<li>Jest is a popular JS testing framework created by Facebook. ITs is used for unit testing and supports a range of features like snapshop testing and code coverage.</li>
+<li>Mocha is a flexible testing framework that uses Nodejs. It supports asynchronous testing and is often used along side with Chai. (We used this for Assignment 6)</li>
+<li>Jasmine is a behavior-driven development testing framework for JavaScript. It supports synchronous and asynchronous testing.</li>
+</ul></p>
+</div>
+
+<button class="collapsible">31. the minified and unminified CSS and JS files, CDN, play CDN, name two most popular CDN providers.</button>
+<div class="content">
+<p>Minified CSS and JS files are files without whitespace, comments, and line breaks. The purpose is to reduce file size. Unminified is the opposite, but may include comments to help programmers understand the code.
+<br>A CDN is a distrubuted network that store and deliver website content to users. They deliver it from a server that is close to the user so it reduces loading speed.
+<br>Cloudflare and Akamai are two popular CDN providers</p>
+</div>
+
+
+<button class="collapsible">33. toolchain, pipeline, bundler, webpack, transpiler , watcher/HMR
+</button>
+<div class="content">
+<p><ul>
+<li>A toolchain is a set of tools used to create a specific output. It includes tools for compiling, building, and testing software.</li>
+<li>A pipeline is a set of steps that code goes through to build, test, and deploy an app.</li>
+<li>A bundler is a tool that takes multiple files and packages them into a single file. Helps reduce requests require to load a webpage.</li>
+<li>Webpack is a popular open-source bundler for JavaScript modules. It allows developers to bundle JS files and other assets like CSS to optimize the output for deployment.</li>
+<li>A transpiler is a tool that converts code from one programming language to another.</li>
+<li> An HMR is a tool that monitors changes to files and automatically rebuilds or updates an apllication when changes are detected.</li>
+</ul>
+</p>
+</div>
+
+<button class="collapsible">36. Each component in React has a lifecycle which you can monitor and manipulate during its three main phases. The three phases are: Mounting, Updating, and Unmounting. Explain each of these three phases are about.  </button>
+<div class="content">
+<p><ul>
+<li>Mounting: this phase occurs when an instance of a component is created and inserted into the DOM</li>
+<li>Updating: This is caused by changes to a componenets prop or state</li> 
+<li>Unmounting: This occurs when a component is removed from the DOM</li>
+</ul></p>
+</div>
+
+
+<button class="collapsible">42. session and sessionStorage, localStorage, IndexedDB</button>
+<div class="content">
+<p><ul>
+<li> A session refers to a period of time in which there is an interaction between 2 end points. An example could be the session between a client and server.</li>
+<li> A sessionStorage is a type of web storage that allows web applications to store key and value pairs within the user's browser session. When the session is closed, the data is deleted.</li>
+<li> A localStorage is a type of web storage like sessionStorage, but the data is stored where after the session is closed, the data is saved.</li>
+<li> IndexedDB is an API used to store large amounts of structured data. IndexedDB is more powerful then either storage type because it can carry complex data structures and perform more hefty operations</li>
+</ul></p>
+</div>
+
+
+<button class="collapsible">43. Provide answers for the following concepts: client-server application, socket programming, ip address, tcp port, http</button>
+<div class="content">
+<p><ul>
+<li> A Client-server application is a program that runs and provides services or resources to other computers on a network. It is divided between a server and a client.</li>
+<li>Socket programming is a way of writing programs that communicate with each other using Sockets. Sockets is an abstraction that represent a two-way link between two programs running on a network.</li>
+<li>An IP address uniquely identifies a device that is running on a network. It helps other devices communicate with it.</li>
+<li>A TCP port is an enpoint on a computer or server for a network protocol. IT is used to define a process in which data is being sent from or recieved.</li>
+<li>HTTP is a protocol used for transfering data. It defines how messages are formatted and sent.</li>
+</ul></p>
+</div>
+
+<!-- end here, Copy -->
+
+
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>
